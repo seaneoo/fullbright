@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "fullbright",
+  "version": "${version}",
+  "name": "Fullbright",
+  "icon": "assets/fullbright/icon.png",
+  "description": "Light up your Minecraft world!",
+  "authors": [
+    "Sean O'Connor"
+  ],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.seano.fullbright.FullbrightMod"
+    ],
+    "modmenu": [
+      "dev.seano.fullbright.ModMenuImpl"
+    ]
+  },
+  "mixins": [
+    "fullbright.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  },
+  "custom": {
+    "modmenu:clientsideOnly": true
+  }
+}

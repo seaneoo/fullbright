@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "dev.seano.fullbright.mixin",
+  "minVersion": "0.7.11",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": [
+    "ClientMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
