@@ -1,4 +1,4 @@
-![GitHub Releases](https://img.shields.io/github/downloads/seaneoo/fullbright/latest/total)
+![![GitHub Releases](https://img.shields.io/github/downloads/seaneoo/fullbright/latest/total)](https://github.com/seaneoo/fullbright/releases)
 
 # Fullbright
 Minecraft mod to increase the game's brightness past the default value.
