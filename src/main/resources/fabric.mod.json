@@ -1,13 +1,17 @@
 {
   "schemaVersion": 1,
   "id": "fullbright",
-  "version": "${version}",
+  "version": "1.16.1-0.2.0-alpha",
   "name": "Fullbright",
   "icon": "assets/fullbright/icon.png",
   "description": "Light up your Minecraft world!",
   "authors": [
     "Sean O'Connor"
   ],
+  "contact": {
+    "homepage": "https://github.com/seaneoo/fullbright",
+    "issues": "https://github.com/seaneoo/fullbright/issues"
+  },
   "license": "MIT",
   "environment": "client",
   "entrypoints": {
@@ -27,7 +31,7 @@
     "minecraft": "1.16.x"
   },
   "suggests": {
-    "flamingo": "*"
+    "modmenu": ">=1.12.2+build.17"
   },
   "custom": {
     "modmenu:clientsideOnly": true

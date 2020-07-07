@@ -1,5 +1,7 @@
 package dev.seano.fullbright;
 
+import net.minecraft.network.MessageType;
+import net.minecraft.text.TranslatableText;
 import org.lwjgl.glfw.GLFW;
 
 import net.fabricmc.api.ClientModInitializer;
@@ -8,8 +10,9 @@ import net.fabricmc.fabric.api.event.client.ClientTickCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.network.MessageType;
-import net.minecraft.text.TranslatableText;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class FullbrightMod implements ClientModInitializer {
 
@@ -30,12 +33,50 @@ public class FullbrightMod implements ClientModInitializer {
 
         ClientTickCallback.EVENT.register(client -> {
             while (TOGGLE_FULLBRIGHT_KEYBIND.wasPressed()) {
-                enabled = !enabled;
-                minecraftClient.options.gamma = (enabled ? modGamma : ModConfig.getConfig().getDefaultGamma());
-
-                client.inGameHud.addChatMessage(MessageType.SYSTEM,
-                        new TranslatableText("chat.toggle_fullbright", (enabled ? "On" : "Off")), null);
+                if (!enabled) {
+                    enabled = true;
+                    increase();
+                    client.inGameHud.addChatMessage(MessageType.GAME_INFO,
+                            new TranslatableText("chat.fullbright_enabled"), null);
+                } else {
+                    enabled = false;
+                    decrease();
+                    client.inGameHud.addChatMessage(MessageType.GAME_INFO,
+                            new TranslatableText("chat.fullbright_disabled"), null);
+                }
             }
         });
+    }
+
+    private void increase() {
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            double d = ModConfig.getConfig().getDefaultGamma();
+
+            @Override
+            public void run() {
+                if (d > modGamma || !enabled) timer.cancel();
+                else {
+                    d += 0.5;
+                    minecraftClient.options.gamma = d;
+                }
+            }
+        }, 0L, 10L);
+    }
+
+    private void decrease() {
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            double d = modGamma;
+
+            @Override
+            public void run() {
+                if (d < ModConfig.getConfig().getDefaultGamma() || enabled) timer.cancel();
+                else {
+                    d -= 0.5;
+                    minecraftClient.options.gamma = d;
+                }
+            }
+        }, 0L, 10L);
     }
 }

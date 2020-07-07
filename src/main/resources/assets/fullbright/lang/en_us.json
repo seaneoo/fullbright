@@ -1,7 +1,8 @@
 {
   "key.fullbright.category": "Fullbright",
   "key.fullbright.toggle_fullbright": "Toggle Fullbright",
-  "chat.toggle_fullbright": "\u00a7e\u00a7l[Fullbright]: \u00a7r%s",
+  "chat.fullbright_enabled": "\u00a7e\u00a7lFullbright enabled",
+  "chat.fullbright_disabled": "\u00a7e\u00a7lFullbright disabled",
   "config.fullbright.category": "General",
   "config.fullbright.entry.defaultGamma": "Default Brightness",
   "config.fullbright.tooltip.defaultGamma": "Game brightness when fullbright is turned off"
