@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "fullbright",
-  "version": "1.16.1-0.2.0-alpha",
+  "version": "1.16.1-0.3.0",
   "name": "Fullbright",
   "icon": "assets/fullbright/icon.png",
   "description": "Light up your Minecraft world!",
