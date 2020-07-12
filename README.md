@@ -9,3 +9,5 @@ This mod is written with [Fabric](https://fabricmc.net/). Please set that up fir
 Along with running Fabric, you need to install these 2 mods:
 - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
 - [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu)
+
+![](./.github/preview.gif)
